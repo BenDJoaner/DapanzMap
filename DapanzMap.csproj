@@ -7,7 +7,7 @@
     <ProjectGuid>{2DAA4135-5F35-425B-AD8E-44C86D842A90}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DapanzMap</RootNamespace>
+    <RootNamespace>Dapanz</RootNamespace>
     <AssemblyName>DapanzMap</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,6 +55,8 @@
     <Compile Include="Interact\InteractableManager.cs" />
     <Compile Include="map\Map.cs" />
     <Compile Include="map\MapManager.cs" />
+    <Compile Include="map\MapPool.cs" />
+    <Compile Include="pool\ObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

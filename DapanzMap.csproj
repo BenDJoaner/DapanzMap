@@ -53,11 +53,16 @@
     <Compile Include="data\SavedData.cs" />
     <Compile Include="Interact\InteractableBase.cs" />
     <Compile Include="Interact\InteractableManager.cs" />
+    <Compile Include="items\Backpack.cs" />
+    <Compile Include="items\Item.cs" />
+    <Compile Include="items\ItemManager.cs" />
+    <Compile Include="items\Shop.cs" />
+    <Compile Include="items\Skep.cs" />
     <Compile Include="map\Map.cs" />
     <Compile Include="map\MapManager.cs" />
-    <Compile Include="map\MapPool.cs" />
     <Compile Include="pool\ObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

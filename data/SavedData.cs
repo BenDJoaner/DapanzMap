@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace DapanzSceneTools
+namespace Dapanz.data
 {
     public class SavedData : MonoBehaviour
     {

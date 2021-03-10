@@ -24,10 +24,19 @@ namespace Dapanz.items
         public int m_number;
         [HideInInspector]
         public int sid;
+        [HideInInspector]
+        public int skepID;
+
+        Item()
+        {
+            m_number = 0;
+            sid = 0;
+            skepID = 0;
+        }
 
         public void Create()
         {
-
+            
         }
 
         public void ModifyNumber(int _value)

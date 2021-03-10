@@ -133,8 +133,20 @@ namespace Dapanz.items
 
         public void ItemInSkep(int _itemID,int _skepID)
         {
-            Skep targetSkep = GetSkep(_skepID);
             Item targetItem = GetItem(_itemID);
+            Skep targetSkep = GetSkep(_skepID);
+            if (targetItem.skepID != 0)
+            {
+                if (targetItem.skepID == _skepID)
+                {
+                    return;
+                }
+                else
+                {
+                    Skep originSkep = GetSkep(targetItem.skepID);
+                    originSkep.Remove(targetItem);
+                }
+            }
 
             targetSkep.Add(targetItem);
         }

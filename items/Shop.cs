@@ -9,6 +9,6 @@ namespace Dapanz.items
 {
     public class Shop : MonoBehaviour
     {
-        public List<Item> m_item;
+        public List<Skep> SkepList;
     }
 }

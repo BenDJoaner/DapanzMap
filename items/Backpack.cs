@@ -5,6 +5,6 @@ namespace Dapanz.items
 {
     public class Backpack : MonoBehaviour
     {
-        public Dictionary<ItemType, Skep> SkepList;
+        public List<Skep> SkepList;
     }
 }

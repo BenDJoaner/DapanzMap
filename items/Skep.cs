@@ -7,43 +7,51 @@ namespace Dapanz.items
     [Serializable]
     public class Skep
     {
-        public int id;
-        public ItemType m_type = ItemType.NONE;
-        public List<Item> items;
+        private int id;
+        public Dictionary<int, int> m_library;
+
+        public int Id { get => id;}
 
         Skep()
         {
-            m_type = ItemType.NONE;
-            items = new List<Item>();
-            ItemManager.Instance.Register(this);
+            ItemManager.Register(this);
         }
 
-        public void Add(Item _item)
+        public void OnCreate(int _id)
         {
-            if (m_type == ItemType.NONE)
-            {
-                m_type = _item.m_type;
-            }
-            else if(m_type != _item.m_type)
-            {
-                Debug.Log("添加物品失败！Skep类型为："+m_type+" item类型为："+_item.m_type);
-                return;
-            }
-
-            items.Add(_item);
-            _item.skepID = id;
+            id = _id;
         }
 
-        public void Remove(Item _item)
+        public void Add(int _itemID,int _number = 1)
         {
-            if (items.Contains(_item))
+            int curNum = 0;
+            if (m_library.TryGetValue(_itemID,out curNum))
             {
-                items.Remove(_item);
-                _item.skepID = 0;
+                m_library[_itemID] += _number;
             }
             else
             {
-                Debug.LogError("移除物品失败，容器内不存在该物品！id="+ _item.id);
+                m_library.Add(_itemID, _number);
+            }
+        }
+
+        public void Remove(int _itemID,int _number = 1)
+        {
+            int curNum = 0;
+            if (m_library.TryGetValue(_itemID, out curNum))
+            {
+                if (curNum > _number)
+                {
+                    m_library[_itemID] -= _number;
+                }
+                else
+                {
+                    m_library.Remove(_itemID);
+                }
+            }
+            else
+            {
+                Debug.LogError("移除物品失败，容器内不存在该物品！id=" + _itemID);
             }
         }
     }

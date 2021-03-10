@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Dapanz.items
 {
@@ -13,35 +14,28 @@ namespace Dapanz.items
         TOOL,//功能道具
         COLLECTION//收藏品
     }
-    public class Item
+    [CreateAssetMenu(order = 2, menuName = "道具/新建物品", fileName = "Item")]
+    [Serializable]
+    public class Item:ScriptableObject
     {
         public int id;
         public string m_name;
         public ItemType m_type;
         public int m_price = 1;
+        public Sprite m_icon;
 
-        [HideInInspector]
-        public int m_number;
-        [HideInInspector]
-        public int sid;
-        [HideInInspector]
-        public int skepID;
+        private int sid;
+
+        public int Sid { get => sid; }
 
         Item()
         {
-            m_number = 0;
-            sid = 0;
-            skepID = 0;
+            ItemManager.Register(this);
         }
 
-        public void Create()
+        public void OnCreate(int _sid)
         {
-            
-        }
-
-        public void ModifyNumber(int _value)
-        {
-            m_number = _value;
+            sid = _sid;
         }
     }
 }

@@ -10,11 +10,26 @@ namespace Dapanz.items
         private int id;
         public Dictionary<int, int> m_library;
 
-        public int Id { get => id;}
+        public int Id { get => id; }
 
-        Skep()
+        [Serializable]
+        public struct SkepStruct
+        {
+            public Item entity;
+            public int num;
+        }
+
+        public SkepStruct[] m_items;
+
+        public void Init()
         {
             ItemManager.Register(this);
+            foreach(SkepStruct info in m_items)
+            {
+                m_library.Add(info.entity.id, info.num);
+                Item _item = ItemManager.GetItem(info.num);
+                _item.Init();
+            }
         }
 
         public void OnCreate(int _id)
@@ -22,10 +37,10 @@ namespace Dapanz.items
             id = _id;
         }
 
-        public void Add(int _itemID,int _number = 1)
+        public void Add(int _itemID, int _number = 1)
         {
             int curNum = 0;
-            if (m_library.TryGetValue(_itemID,out curNum))
+            if (m_library.TryGetValue(_itemID, out curNum))
             {
                 m_library[_itemID] += _number;
             }
@@ -35,7 +50,7 @@ namespace Dapanz.items
             }
         }
 
-        public void Remove(int _itemID,int _number = 1)
+        public void Remove(int _itemID, int _number = 1)
         {
             int curNum = 0;
             if (m_library.TryGetValue(_itemID, out curNum))

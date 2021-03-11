@@ -14,9 +14,7 @@ namespace Dapanz.items
         TOOL,//功能道具
         COLLECTION//收藏品
     }
-    [CreateAssetMenu(order = 2, menuName = "道具/新建物品", fileName = "Item")]
-    [Serializable]
-    public class Item:ScriptableObject
+    public class Item
     {
         public int id;
         public string m_name;
@@ -28,7 +26,7 @@ namespace Dapanz.items
 
         public int Sid { get => sid; }
 
-        Item()
+        public void Init()
         {
             ItemManager.Register(this);
         }

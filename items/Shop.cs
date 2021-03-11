@@ -9,6 +9,11 @@ namespace Dapanz.items
 {
     public class Shop : MonoBehaviour
     {
-        public List<Skep> SkepList;
+        public Skep commodity;
+
+        private void Awake()
+        {
+            commodity.Init();
+        }
     }
 }

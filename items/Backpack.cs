@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dapanz.items
+namespace Dapanz
 {
     public class Backpack : MonoBehaviour
     {

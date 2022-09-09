@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Dapanz.data
+namespace Dapanz
 {
     public enum ItemState
     {

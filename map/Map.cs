@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dapanz.map
+namespace Dapanz
 {
     public enum MapState
     {

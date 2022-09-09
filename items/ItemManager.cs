@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Dapanz.items
+namespace Dapanz
 {
     public class ItemManager:MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dapanz.items
+namespace Dapanz
 {
     [Serializable]
     public class Skep

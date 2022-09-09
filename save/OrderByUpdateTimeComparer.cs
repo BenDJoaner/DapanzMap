@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace Dapanz
 {
-    public class Shop : MonoBehaviour
+    public static class OrderByUpdateTimeComparer
     {
-        public Skep commodity;
-
-        private void Awake()
+        public static int Comparer(SaveItem x, SaveItem y)
         {
-            commodity.Init();
+            return 0;
         }
     }
 }

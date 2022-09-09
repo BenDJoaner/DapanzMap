@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Dapanz.items
+namespace Dapanz
 {
     public enum ItemType
     {

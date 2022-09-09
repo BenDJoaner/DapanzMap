@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dapanz.data
+namespace Dapanz
 {
     public class InteractableManager:MonoBehaviour
     {

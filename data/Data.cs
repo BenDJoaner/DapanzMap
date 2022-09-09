@@ -1,4 +1,4 @@
-﻿namespace Dapanz.data
+﻿namespace Dapanz
 {
     public class Data
     {
